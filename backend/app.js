@@ -1,11 +1,11 @@
 const express = require('express');
 const mysql = require('mysql');
 const bodyParser = require('body-parser');
-app.use(express.static('public'));
-module.exports = app;
 
-
+// Khởi tạo biến app trước khi sử dụng nó
 const app = express();
+
+app.use(express.static('public'));
 app.use(bodyParser.urlencoded({ extended: false }));
 
 // Create connection to MySQL database
@@ -43,6 +43,15 @@ app.post('/login', (req, res) => {
 app.post('/user', (req, res) => {
     console.log("hqwdshu2qewxcdhnewxdnj");
     res.send('User route accessed');
+});
+
+// Export module sau khi app đã được khởi tạo
+module.exports = app;
+
+// Khởi động server
+const port = process.env.PORT || 3000;
+app.listen(port, () => {
+    console.log(`Server is running on port ${port}`);
 });
 
 
