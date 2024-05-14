@@ -13,7 +13,7 @@ const db = mysql.createConnection({
     host: '0.tcp.ap.ngrok.io',
     user: 'root',
     password: '',
-    database: 'boc'
+    database: 'boc',
     post: 13891
 });
 
