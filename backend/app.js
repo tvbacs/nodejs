@@ -1,6 +1,7 @@
 const express = require('express');
 const mysql = require('mysql');
 const bodyParser = require('body-parser');
+app.use(express.static('public'));
 
 const app = express();
 app.use(bodyParser.urlencoded({ extended: false }));
