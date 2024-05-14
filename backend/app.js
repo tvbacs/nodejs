@@ -23,6 +23,10 @@ db.connect((err) => {
     console.log('Connected to the database');
 });
 
+app.get('/index.html', (req, res) => {
+    res.sendFile(__dirname + '/index.html');
+});
+
 app.post('/login', (req, res) => {
     const username = req.body.username;
     const password = req.body.password;
