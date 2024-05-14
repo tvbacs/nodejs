@@ -2,6 +2,8 @@ const express = require('express');
 const mysql = require('mysql');
 const bodyParser = require('body-parser');
 app.use(express.static('public'));
+module.exports = app;
+
 
 const app = express();
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -43,6 +45,4 @@ app.post('/user', (req, res) => {
     res.send('User route accessed');
 });
 
-app.listen(4000, () => {
-    console.log('Server is running on port 5000');
-});
+
