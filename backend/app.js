@@ -10,10 +10,11 @@ app.use(bodyParser.urlencoded({ extended: false }));
 
 // Create connection to MySQL database
 const db = mysql.createConnection({
-    host: 'localhost',
+    host: '0.tcp.ap.ngrok.io',
     user: 'root',
     password: '',
     database: 'boc'
+    post: 
 });
 
 db.connect((err) => {
