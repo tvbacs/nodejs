@@ -1,14 +1,11 @@
 {
+  "version": 2,
   "builds": [
+    { "src": "index.html", "use": "@vercel/static-build" },
     { "src": "backend/app.js", "use": "@vercel/node" }
   ],
-  "rewrites": [
-    { "source": "/(.*)", "destination": "/backend/app.js" },
-    { "source": "index.html", "destination": "index.html" }
-  ],
-  "version": 2,
-  "name": "my-app",
   "routes": [
-    { "src": "/(my)", "dest": "/backend/app.js" }
+    { "src": "/", "dest": "index.html" },
+    { "src": "/api/.*", "dest": "backend/app.js" }
   ]
 }
