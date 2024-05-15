@@ -34,9 +34,9 @@ app.post('/api/login', (req, res) => {
     }
 
     if (result.length > 0) {
-      res.send("OK");
+      res.send("Ban da dang nhap thanh cong");
     } else {
-      res.send("KO");
+      res.send("ban da dang nhap that bai");
     }
   });
 });
