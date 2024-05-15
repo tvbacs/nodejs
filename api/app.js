@@ -21,7 +21,7 @@ db.connect((err) => {
   console.log('Connected to the database');
 });
 
-app.post('/login', (req, res) => {
+app.post('/api/login', (req, res) => {
   const username = req.body.username;
   const password = req.body.password;
 
@@ -40,8 +40,8 @@ app.post('/login', (req, res) => {
   });
 });
 
-app.post('/user', (req, res) => {
-  console.log("hqwdshu2qewxcdhnewxdnj");
+app.post('/api/user', (req, res) => {
+  console.log("User route accessed");
   res.send('User route accessed');
 });
 
