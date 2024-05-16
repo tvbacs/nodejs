@@ -8,11 +8,12 @@
 /* Styling body */
 body {
     font-family: 'Arial', sans-serif;
-    background: #f0f0f0;
+    background: linear-gradient(to right, #6a11cb, #2575fc);
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
+    color: #333;
 }
 
 /* Container for the login form */
@@ -20,20 +21,23 @@ body {
     background: #fff;
     padding: 2rem;
     border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    width: 300px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
 }
 
 /* Form header */
 .login-form h2 {
     margin-bottom: 1rem;
-    text-align: center;
     color: #333;
+    font-size: 1.5rem;
 }
 
 /* Form group */
 .form-group {
-    margin-bottom: 1rem;
+    margin-bottom: 1.5rem;
+    text-align: left;
 }
 
 /* Form labels */
@@ -41,39 +45,46 @@ body {
     display: block;
     margin-bottom: 0.5rem;
     color: #555;
+    font-size: 1rem;
 }
 
 /* Form inputs */
 .form-group input {
     width: 100%;
-    padding: 0.5rem;
-    border: 1px solid #ccc;
+    padding: 0.75rem;
+    border: 1px solid #ddd;
     border-radius: 5px;
     font-size: 1rem;
+}
+
+/* Focus effect on inputs */
+.form-group input:focus {
+    border-color: #6a11cb;
+    outline: none;
+    box-shadow: 0 0 5px rgba(106, 17, 203, 0.5);
 }
 
 /* Submit button */
 .btn {
     width: 100%;
-    padding: 0.5rem;
+    padding: 0.75rem;
     border: none;
     border-radius: 5px;
-    background: #007bff;
+    background: #6a11cb;
     color: #fff;
     font-size: 1rem;
     cursor: pointer;
-    transition: background 0.3s;
+    transition: background 0.3s ease;
 }
 
 /* Button hover effect */
 .btn:hover {
-    background: #0056b3;
+    background: #2575fc;
 }
 
 /* Responsive adjustments */
-@media (max-width: 400px) {
+@media (max-width: 480px) {
     .login-container {
-        width: 100%;
-        padding: 1rem;
+        padding: 1.5rem;
     }
 }
