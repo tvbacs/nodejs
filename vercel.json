@@ -8,15 +8,15 @@
   ],
   "routes": [
     {
-      "src": "/public/(.*)",
-      "dest": "/public/$1"
+      "src": "/public/*",
+      "dest": "/public/:splat"
     },
     {
-      "src": "/assets/(.*)",
-      "dest": "/assets/$1"
+      "src": "/assets/*",
+      "dest": "/assets/:splat"
     },
     {
-      "src": "/(.*)",
+      "src": "/*",
       "dest": "/app.js"
     }
   ]

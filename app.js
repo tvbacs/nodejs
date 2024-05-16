@@ -11,7 +11,12 @@ app.use(express.static('./public'));
 app.use(express.static('./assets'));
 app.use(bodyParser.urlencoded({ extended: false }));
 
+// Serve static files from both public and assets directories
 app.use(express.static(path.join(__dirname, 'public')));
+app.use('/assets', express.static(path.join(__dirname, 'assets')));
+
+// Parse URL-encoded bodies (e.g., from HTML forms)
+app.use(express.urlencoded({ extended: false }));
 
 // Serve the index.html file for the root route
 app.get('/', (req, res) => {
