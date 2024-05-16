@@ -7,7 +7,7 @@
   },
 
   "scripts": {
-    "start": "node backend/app.js"
+    "start": "node api/app.js"
   }
 }
 

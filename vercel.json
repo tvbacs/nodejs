@@ -2,12 +2,21 @@
   "version": 2,
   "builds": [
     {
+<<<<<<< HEAD
       "src": "app.js",
+=======
+      "src": "api/app.js",
+>>>>>>> 737c446f7fac1de987a417bba29691d9d5b9b2dc
       "use": "@vercel/node"
+    },
+    {
+      "src": "public/index.html",
+      "use": "@vercel/static"
     }
   ],
   "routes": [
     {
+<<<<<<< HEAD
       "src": "/public/(.*)",
       "dest": "/public/$1"
     },
@@ -18,6 +27,14 @@
     {
       "src": "/(.*)",
       "dest": "/app.js"
+=======
+      "src": "/api/(.*)",
+      "dest": "/api/app.js"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/public/index.html"
+>>>>>>> 737c446f7fac1de987a417bba29691d9d5b9b2dc
     }
   ]
 }
