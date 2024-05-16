@@ -5,6 +5,7 @@ const bodyParser = require('body-parser');
 const app = express();
 
 app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json()); // Để xử lý JSON payload
 
 // Create connection to MySQL database
 const db = mysql.createConnection({
@@ -22,8 +23,9 @@ db.connect((err) => {
 });
 
 app.post('/api/login', (req, res) => {
-  const username = req.body.username;
-  const password = req.body.password;
+  const { username, password } = req.body;
+
+  console.log('Received POST /api/login with data:', { username, password });
 
   db.query('SELECT * FROM user WHERE username = ? AND password = ?', [username, password], (err, result) => {
     if (err) {
@@ -32,22 +34,14 @@ app.post('/api/login', (req, res) => {
       return;
     }
 
+    console.log('Database query result:', result);
+
     if (result.length > 0) {
       res.send("Ban da dang nhap thanh cong");
     } else {
-      res.send("ban da dang nhap that bai");
+      res.send("Ban da dang nhap that bai");
     }
   });
 });
 
-app.post('/api/user', (req, res) => {
-  console.log("User route accessed");
-  res.send('User route accessed');
-});
-
 module.exports = app;
-
-const port = process.env.PORT || 3000;
-app.listen(port, () => {
-  console.log(`Server is running on port ${port}`);
-});
