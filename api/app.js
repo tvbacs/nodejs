@@ -3,12 +3,11 @@ const mysql = require('mysql');
 const bodyParser = require('body-parser');
 
 const app = express();
-// Create connection to MySQL database
 
-
-// Serve static files from the "public" and "assets" directories
 app.use(express.static('./assets'));
+app.use(bodyParser.urlencoded({ extended: false }));
 
+// Create connection to MySQL database
 const db = mysql.createConnection({
   host: '0.tcp.ap.ngrok.io',
   user: 'root',
@@ -47,9 +46,4 @@ app.post('/api/user', (req, res) => {
   res.send('User route accessed');
 });
 
-
-
-const port = process.env.PORT || 3000;
-app.listen(port, () => {
-  console.log(`Server is running on port ${port}`);
-});
+module.exports = app;
