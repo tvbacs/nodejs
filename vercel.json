@@ -10,7 +10,7 @@
       "use": "@vercel/node"
     },
     {
-      "src": "index.html",
+      "src": "assets/index.html",
       "use": "@vercel/static"
     }
   ],
