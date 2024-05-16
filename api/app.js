@@ -2,11 +2,6 @@ const express = require('express');
 const mysql = require('mysql');
 const bodyParser = require('body-parser');
 
-const app = express();
-
-app.use(express.static('./public'));
-app.use(express.static('./assets'));
-app.use(bodyParser.urlencoded({ extended: false}));
 
 // Create connection to MySQL database
 const db = mysql.createConnection({
@@ -47,7 +42,7 @@ app.post('/api/user', (req, res) => {
   res.send('User route accessed');
 });
 
-module.exports = app;
+
 
 const port = process.env.PORT || 3000;
 app.listen(port, () => {
