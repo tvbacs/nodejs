@@ -21,6 +21,7 @@ app.use(express.urlencoded({ extended: false }));
 // Serve the index.html file for the root route
 app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, 'public', 'index.html'));
+  res.sendFile(path.join(__dirname, 'assets')); 
 });
 
 // Create connection to MySQL database
