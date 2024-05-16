@@ -22,10 +22,6 @@
     {
       "src": "/api/(.*)",
       "dest": "/api/app.js"
-    }, 
-    {
-      "src": "/api/(.*)",
-      "dest": "/api/static_file.js"
     }
   ]
 }
