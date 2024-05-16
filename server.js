@@ -11,8 +11,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json()); // Để xử lý JSON payload
 
 // Serve static files from the "assets" directory
-
-app.use(express.static('./assets'))
+app.use('/assets', express.static(path.join(__dirname, 'assets')));
 
 // Serve the index.html file for the root route
 app.get('/', (req, res) => {
