@@ -18,11 +18,11 @@ app.get('/', (req, res) => {
 
 // Create connection to MySQL database
 const db = mysql.createConnection({
-    host: '127.0.0.1',
+    host: '0.tcp.ap.ngrok.io',
     user: 'root',
     password: '',
     database: 'boc',
-    port: 3306
+    port: 17232
 });
 
 db.connect((err) => {
