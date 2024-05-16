@@ -1,6 +1,8 @@
 const express = require('express');
 const mysql = require('mysql');
 const bodyParser = require('body-parser');
+const path = require('path');
+
 
 // Khởi tạo biến app trước khi sử dụng nó
 const app = express();
