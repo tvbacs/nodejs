@@ -8,10 +8,6 @@
     {
       "src": "api/static_file.js",
       "use": "@vercel/node"
-    },
-    {
-      "src": "assets/index.html",
-      "use": "@vercel/static"
     }
   ],
   "routes": [
