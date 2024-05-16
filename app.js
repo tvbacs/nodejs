@@ -5,16 +5,24 @@ const bodyParser = require('body-parser');
 // Khởi tạo biến app trước khi sử dụng nó
 const app = express();
 
-app.use(express.static('public'));
+app.use(express.static('./public'));
+app.use(express.static('./assets'));
 app.use(bodyParser.urlencoded({ extended: false }));
+
+app.use(express.static(path.join(__dirname, 'public')));
+
+// Serve the index.html file for the root route
+app.get('/', (req, res) => {
+  res.sendFile(path.join(__dirname, 'public', 'index.html'));
+});
 
 // Create connection to MySQL database
 const db = mysql.createConnection({
-    host: '0.tcp.ap.ngrok.io',
+    host: '127.0.0.1',
     user: 'root',
     password: '',
     database: 'boc',
-    port: 13891
+    port: 3306
 });
 
 db.connect((err) => {

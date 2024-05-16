@@ -1,16 +1,23 @@
 {
   "version": 2,
-  "name": "my-app",
   "builds": [
     {
-      "src": "backend/app.js",
+      "src": "app.js",
       "use": "@vercel/node"
     }
   ],
-  "rewrites": [
+  "routes": [
     {
-      "source": "/(.*)",
-      "destination": "/backend/app.js"
+      "src": "/public/(.*)",
+      "dest": "/public/$1"
+    },
+    {
+      "src": "/assets/(.*)",
+      "dest": "/assets/$1"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/app.js"
     }
   ]
 }
