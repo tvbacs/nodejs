@@ -7,7 +7,6 @@ const app = express();
 
 
 // Serve static files from the "public" and "assets" directories
-app.use(express.static('./public'));
 app.use(express.static('./assets'));
 
 const db = mysql.createConnection({

@@ -10,9 +10,10 @@
       "use": "@vercel/node"
     },
     {
-      "src": "assets/index.html",
+      "src": "assets/*",
       "use": "@vercel/static"
     }
+    
   ],
   "routes": [
     {
