@@ -4,6 +4,12 @@ const bodyParser = require('body-parser');
 
 const app = express();
 // Create connection to MySQL database
+
+
+// Serve static files from the "public" and "assets" directories
+app.use(express.static('./public'));
+app.use(express.static('./assets'));
+
 const db = mysql.createConnection({
   host: '0.tcp.ap.ngrok.io',
   user: 'root',
