@@ -5,10 +5,9 @@
     "express": "^4.19.2",
     "mysql": "^2.18.1"
   },
-
   "scripts": {
-    "start": "node api/app.js"
+    "start:api": "node api/app.js",
+    "start:server": "node server.js"
   }
 }
-
 
