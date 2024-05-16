@@ -29,7 +29,7 @@
     },
     {
       "src": "/api/(.*)",
-      "dest": "/api/app.js"
+      "dest": "/api/file.js"
     },
     {
       "src": "/(.*)",
